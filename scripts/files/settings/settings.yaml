@@ -1,0 +1,3 @@
+webcam:
+  snapshot: http://127.0.0.1:8080/images/live.jpg
+  stream: /webcam/hls/live.stream.m3u8
