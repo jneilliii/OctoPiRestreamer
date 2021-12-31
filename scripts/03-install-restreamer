@@ -12,3 +12,12 @@ systemctl disable webcamd
 systemctl disable ffmpeg_hls
 curl -fsSL https://get.docker.com -o get-docker.sh
 sh get-docker.sh
+
+systemctl start docker
+docker create --restart always \
+     --name restreamer \
+     -e "RS_USERNAME=admin" -e "RS_PASSWORD=datarhei" \
+     -e "RS_SNAPSHOT_INTERVAL=10" \
+     -p 8080:8080 -v /mnt/restreamer/db:/restreamer/db \
+     --tmpfs /var/run/hls \
+     datarhei/restreamer-armv7l:latest
