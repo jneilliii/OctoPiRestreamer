@@ -45,6 +45,6 @@ jobs:
       uses: peter-evans/repository-dispatch@v1
       with:
         token: ${{ secrets.REPODISPATCH_TOKEN }}
-        repository: jneilliii/OctoPiWiFi
+        repository: jneilliii/OctoPiRestreamer
         event-type: octoprint_release
         client-payload: '{"version": "${{ steps.octoprint_latestrelease.outputs.release }}"}'
