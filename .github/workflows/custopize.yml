@@ -38,10 +38,11 @@ jobs:
 
     - name: 🔎 Get OctoPi Version
       id: octopi_latestrelease
-      uses: pozetroninc/github-action-get-latest-release@master
+      uses: jneilliii/github-action-get-latest-release@master
       with:
         repository: guysoft/OctoPi
         excludes: prerelease, draft
+        token: ${{ secrets.GITHUB_TOKEN }}
 
     - name: "⬇ Download latest OctoPi"
       id: octopi_download
